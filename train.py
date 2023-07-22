@@ -13,6 +13,8 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("-d", "--data", help="folder where the data is stored", type=str, default="Data")
 parser.add_argument("-w", "--work", help="folder where the config file is stored. Config file is downloaded from link", type=str, default="Work")
+parser.add_argument("-m", "--model", help="trained model name", type=str, default="model.nemo")
+parser.add_argument("-c", "--class", help="number of classes", type=int, default=9)
 args = parser.parse_args()
 
 
@@ -34,7 +36,7 @@ else:
 config_path = f'{WORK_DIR}/configs/{MODEL_CONFIG}'
 config = OmegaConf.load(config_path)
 
-config.model.dataset.num_classes = 9
+config.model.dataset.num_classes = args.class
 config.model.train_ds.file_path = os.path.join(DATA_DIR, 'train.txt')
 config.model.validation_ds.file_path = os.path.join(DATA_DIR, 'test.txt')
 # Name of the .nemo file where trained model will be saved.
