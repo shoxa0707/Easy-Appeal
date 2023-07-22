@@ -56,7 +56,7 @@ python -m pip install git+https://github.com/NVIDIA/NeMo.git@main#egg=nemo_toolk
 # Train
 
 ```
-python train.py --data path/to/dataset --work path/to/configs
+python train.py --data path/to/dataset --work path/to/configs --model save/model/path --class number/of/classes
 ```
 
 # Deployments
