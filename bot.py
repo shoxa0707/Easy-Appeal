@@ -266,7 +266,7 @@ def query_handler(update, context):
             
 
 
-updater = Updater(token = '6382942376:AAFHW6CpGJv7mI48q8OFgIQpCxaKFmdK5Ec')
+updater = Updater(token = 'YOUR TOKEN')
 dispatcher = updater.dispatcher
 
 dispatcher.add_handler(CommandHandler('Start', start))
